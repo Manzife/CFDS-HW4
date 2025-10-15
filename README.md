@@ -3,5 +3,5 @@ Collaborators:
 
 - Felipe Manzi 
 - Galla Gelpi
-- Jilliam Hunter
+- Jillian Hunter
 - Sebastian Paik
