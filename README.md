@@ -1,2 +1,7 @@
 # CFDS-HW4
-Repo for HW4
+Collaborators:
+
+- Felipe Manzi 
+- Galla Gelpi
+- Jilliam Hunter
+- Sebastian Paik
