@@ -7,6 +7,7 @@
 #  "Hakuna matata", "Timon, Pumba and Simba are friends, but Simba could eat the other two."] 
 #
 
+
 # 2)
 # Create a function called "get_day_month_year" that takes 
 # a list of datetimes.date and returns a pandas dataframe
@@ -15,6 +16,7 @@
 # day, month, and year.
 # 
 
+
 # 3) 
 # Create a function called "compute_distance" that takes
 # a list of tuple pairs with latitude and longitude coordinates and 
@@ -22,6 +24,11 @@
 # example input: [((41.23,23.5), (41.5, 23.4)), ((52.38, 20.1),(52.3, 17.8))]
 # HINT: You can use geopy.distance in order to compute the distance
 #
+from geopy.distance import distance
+
+def compute_distance(list_of_tuples):
+    return list(map(lambda x: distance(x[0], x[1]).km, list_of_tuples))
+
 
 #################################################
 # 4)
@@ -34,3 +41,4 @@
 # for instance for list_1=[[2], 3, [[1,2],5]] 
 # the result should be 13
 #
+
