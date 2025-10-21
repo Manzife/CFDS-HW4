@@ -21,10 +21,4 @@ def clean_data(df: pd.DataFrame) -> pd.DataFrame:
     for col in ["height", "weight"]:
         df[col] = df[col].fillna(df[col].mean())
 
-    # One-hot encoding for ethnicity
-    df = pd.get_dummies(df, columns=["ethnicity"], prefix="ethnicity", drop_first=True)
-
-    # Binary variable for gender
-    df["gender_binary"] = df["gender"].apply(lambda x: 1 if str(x).lower().startswith("m") else 0)
-
     return df
