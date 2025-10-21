@@ -6,7 +6,12 @@
 # ["Simba and Nala are lions.", "I laugh in the face of danger.",
 #  "Hakuna matata", "Timon, Pumba and Simba are friends, but Simba could eat the other two."] 
 #
+def count_simba(strings):
+    list_counts = list(map(lambda x: x.lower().count("simba"), strings))
+    return sum(list_counts)
 
+#count_simba(["Simba and Nala are lions.", "I laugh in the face of danger.",
+#"Hakuna matata", "Timon, Pumba and Simba are friends, but Simba could eat the other two."])
 
 # 2)
 # Create a function called "get_day_month_year" that takes 
