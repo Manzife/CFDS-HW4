@@ -1,3 +1,5 @@
+import pandas as pd
+
 ##### Try to use map and reduce in the next 3 exercises
 # 1)
 # Create a function called "count_simba" that counts and returns
@@ -6,7 +8,12 @@
 # ["Simba and Nala are lions.", "I laugh in the face of danger.",
 #  "Hakuna matata", "Timon, Pumba and Simba are friends, but Simba could eat the other two."] 
 #
+def count_simba(strings):
+    list_counts = list(map(lambda x: x.lower().count("simba"), strings))
+    return sum(list_counts)
 
+#count_simba(["Simba and Nala are lions.", "I laugh in the face of danger.",
+#"Hakuna matata", "Timon, Pumba and Simba are friends, but Simba could eat the other two."])
 
 # 2)
 # Create a function called "get_day_month_year" that takes 
@@ -15,6 +22,11 @@
 # is an element of the input list and has as value its 
 # day, month, and year.
 # 
+
+def get_day_month_year(dates):
+    data = [(date.day, date.month, date.year) for date in dates]
+    df = pd.DataFrame(data, columns=['day', 'month', 'year'])
+    return df
 
 
 # 3) 
@@ -41,4 +53,17 @@ def compute_distance(list_of_tuples):
 # for instance for list_1=[[2], 3, [[1,2],5]] 
 # the result should be 13
 #
+
+def sum_general_int_list(lista):
+    total = 0
+    for element in lista:
+        if isinstance(element, int):
+            total += element
+        elif isinstance(element, list):
+            total += sum_general_int_list(element)  # recursive call
+        else:
+            raise ValueError(f"Unsupported type: {type(element)}")
+    return total
+
+
 
