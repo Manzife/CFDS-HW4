@@ -8,6 +8,12 @@ import pandas as pd
 # ["Simba and Nala are lions.", "I laugh in the face of danger.",
 #  "Hakuna matata", "Timon, Pumba and Simba are friends, but Simba could eat the other two."] 
 #
+def count_simba(strings):
+    list_counts = list(map(lambda x: x.lower().count("simba"), strings))
+    return sum(list_counts)
+
+#count_simba(["Simba and Nala are lions.", "I laugh in the face of danger.",
+#"Hakuna matata", "Timon, Pumba and Simba are friends, but Simba could eat the other two."])
 
 # 2)
 # Create a function called "get_day_month_year" that takes 
@@ -30,6 +36,11 @@ def get_day_month_year(dates):
 # example input: [((41.23,23.5), (41.5, 23.4)), ((52.38, 20.1),(52.3, 17.8))]
 # HINT: You can use geopy.distance in order to compute the distance
 #
+from geopy.distance import distance
+
+def compute_distance(list_of_tuples):
+    return list(map(lambda x: distance(x[0], x[1]).km, list_of_tuples))
+
 
 #################################################
 # 4)
@@ -42,3 +53,17 @@ def get_day_month_year(dates):
 # for instance for list_1=[[2], 3, [[1,2],5]] 
 # the result should be 13
 #
+
+def sum_general_int_list(lista):
+    total = 0
+    for element in lista:
+        if isinstance(element, int):
+            total += element
+        elif isinstance(element, list):
+            total += sum_general_int_list(element)  # recursive call
+        else:
+            raise ValueError(f"Unsupported type: {type(element)}")
+    return total
+
+
+
