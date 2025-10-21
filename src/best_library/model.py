@@ -4,9 +4,9 @@ from sklearn.ensemble import RandomForestClassifier
 def train_model(X_train, y_train, model_type='logistic'):
 
     if model_type == 'logistic':
-        model = LogisticRegression(max_iter=1000)
+        model = LogisticRegression(max_iter=100)
     else:
-        model = RandomForestClassifier(random_state=42)
+        model = RandomForestClassifier(random_state=42, n_estimators= 30)
     
     model.fit(X_train, y_train)
     return model
