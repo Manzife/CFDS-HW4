@@ -42,3 +42,16 @@ def compute_distance(list_of_tuples):
 # the result should be 13
 #
 
+def sum_general_int_list(lista):
+    total = 0
+    for element in lista:
+        if isinstance(element, int):
+            total += element
+        elif isinstance(element, list):
+            total += sum_general_int_list(element)  # recursive call
+        else:
+            raise ValueError(f"Unsupported type: {type(element)}")
+    return total
+
+
+
