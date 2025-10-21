@@ -3,7 +3,7 @@ name = "cfds-hw4"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-requires-python = "==3.11"
+requires-python = ">=3.11"
 dependencies = [
     "pandas>=2.3.3",
     "scikit-learn>=1.7.2",
@@ -13,3 +13,8 @@ dependencies = [
 dev = [
     "ipykernel>=7.0.1",
 ]
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
