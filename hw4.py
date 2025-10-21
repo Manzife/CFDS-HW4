@@ -1,3 +1,5 @@
+import pandas as pd
+
 ##### Try to use map and reduce in the next 3 exercises
 # 1)
 # Create a function called "count_simba" that counts and returns
@@ -20,6 +22,11 @@ def count_simba(strings):
 # is an element of the input list and has as value its 
 # day, month, and year.
 # 
+
+def get_day_month_year(dates):
+    data = [(date.day, date.month, date.year) for date in dates]
+    df = pd.DataFrame(data, columns=['day', 'month', 'year'])
+    return df
 
 
 # 3) 
